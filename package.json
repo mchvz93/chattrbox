@@ -1,0 +1,42 @@
+{
+  "name": "cpsc349-hw6-chattrbox",
+  "version": "1.0.0",
+  "description": "CPSC 349 Homework 6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "browserify -d app/scripts/src/main.js -o app/scripts/dist/main.js",
+    "watch": "watchify -v -d app/scripts/src/main.js -o app/scripts/dist/main.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ],
+          "sourceMap": true
+        }
+      ]
+    ]
+  },
+  "author": "Marco Chavez",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "crypto-js": "^3.1.6",
+    "jquery": "^2.2.0",
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.7",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "ws": "^7.4.5"
+  }
+}
